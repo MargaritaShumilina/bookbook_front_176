@@ -1,0 +1,49 @@
+.mobile-navigation__input-registration {
+  width: 312px;
+  font-family: "Open Sans";
+  margin: 10px 0 13px 0;
+  padding: 16px 0 16px 16px;
+  color: rgba(7, 12, 39, 0.6);
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 400;
+  background-color: #eef1ff;
+  border: none;
+  border-radius: 12px;
+}
+
+.mobile-navigation__input-registration:nth-child(even) {
+  margin: 8px 0 5px 0;
+}
+
+.mobile-navigation__input-registration:focus {
+  outline: 1px #0d2dba solid;
+}
+
+.mobile-navigation__input-registration:hover {
+  cursor: pointer;
+  background-color: #dadffa;
+}
+
+@media screen and (max-width: 1025px) {
+  .mobile-navigation__input-registration {
+    width: 440px;
+  }
+
+  .mobile-navigation__input-registration:nth-child(even) {
+    margin: 18px 0 5px 0;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .mobile-navigation__input-registration {
+    width: 480px;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .mobile-navigation__input-registration {
+    margin: 16px 0 3px 0;
+    width: 272px;
+  }
+}

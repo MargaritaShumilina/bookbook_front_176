@@ -1,0 +1,12 @@
+# npm
+node_modules
+npm-debug.log
+coverage
+
+# Git
+.git/
+.gitignore
+
+# Docker
+.dockerignore
+Dockerfile

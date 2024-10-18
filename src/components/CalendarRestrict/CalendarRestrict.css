@@ -1,0 +1,43 @@
+.calendar__restrict {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  position: absolute;
+  z-index: 100000;
+  top: 330px;
+  left: 40px;
+  width: 496px;
+  height: 376px;
+  margin: 4px 0 15px 0;
+  padding: 0;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0px 8px 32px 0px #0d162129;
+}
+
+.calendar__month {
+  width: 280px;
+  margin: 20px 8px 20px 24px;
+  padding: 0;
+}
+
+@media screen and (max-width: 700px) {
+  .calendar__restrict {
+    top: 330px;
+    left: 40px;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .calendar__restrict {
+    top: 310px;
+    left: 0;
+    width: 318px;
+  }
+
+  .calendar__month {
+    width: 280px;
+    margin: 20px 0;
+    padding: 0;
+  }
+}

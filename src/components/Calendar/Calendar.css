@@ -1,0 +1,105 @@
+.calendar {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  z-index: 100000;
+  top: 280px;
+  left: 169px;
+  width: 624px;
+  height: 376px;
+  margin: 4px 0 15px 0;
+  padding: 0;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0px 8px 32px 0px #0d162129;
+}
+
+.calendar__month {
+  width: 280px;
+  margin: 20px 8px 20px 24px;
+  padding: 0;
+}
+
+.calendar__month:nth-child(even) {
+  width: 280px;
+  margin: 20px 8px 20px 8px;
+  padding: 0;
+}
+
+  .calendar__restrict {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: absolute;
+    z-index: 100000;
+    top: 344px;
+    left: 316px;
+    width: 328px;
+    height: 376px;
+    margin: 4px 0 15px 0;
+    padding: 0;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0px 8px 32px 0px #0D162129;
+  }
+
+  .calendar__month-restrict {
+    width: 280px;
+    margin: 20px 8px 20px 8px;
+    padding: 0;
+  }
+
+  @media screen and (max-width: 1025px) {
+    .calendar {
+      top: 287px;
+      left: 128px;
+    }
+
+    .calendar__restrict {
+      width: 456px;
+      top: 342px;
+      left: 212px;
+    }
+  }
+
+@media screen and (max-width: 900px) {
+  .calendar {
+    top: 296px;
+    left: 8px;
+  }
+  .calendar__restrict {
+    left: 92px;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .calendar {
+    top: 330px;
+    left: -25px;
+  }
+  .calendar__restrict {
+    width: 496px;
+    top: 376px;
+    left: 40px;
+  }
+}
+
+  @media screen and (max-width: 700px) {
+    .calendar__restrict {
+      top: 375px;
+    }
+  }
+
+  @media screen and (max-width: 575px) {
+    .calendar__restrict {
+      top: 355px;
+      left: 0;
+      width: 318px;
+    }
+
+    .calendar__month-restrict {
+        width: 280px;
+        margin: 20px 0;
+        padding: 0;
+      }
+  }

@@ -1,0 +1,61 @@
+.mobile-navigation__data-input {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  width: 160px;
+  font-family: "Open Sans";
+  margin: 4px 0 15px 0;
+  padding: 0;
+  background-color: #eef1ff;
+  border: none;
+  border-radius: 12px;
+}
+
+.mobile-navigation__data-input:hover {
+  cursor: pointer;
+  background-color: #dadffa;
+}
+
+.mobile-navigation__data-input_icon {
+  padding-left: 15px;
+}
+
+.mobile-navigation__data-input_text {
+  font-family: "Open Sans";
+  margin: 0;
+  padding: 16px 0 17px 17px;
+  color: rgba(7, 12, 39, 0.6);
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 400;
+}
+
+@media screen and (max-width: 1025px) {
+  .mobile-navigation__data-input {
+    width: 224px;
+    margin: 11px 0 15px 0;
+  }
+
+  .mobile-navigation__data-input_text {
+    padding: 16px 0 16px 15px;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .mobile-navigation__data-input {
+    width: 244px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .mobile-navigation__data-input {
+    margin-bottom: 4px;
+    width: 244px;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .mobile-navigation__data-input {
+    width: 140px;
+  }
+}

@@ -1,0 +1,23 @@
+.mobile-navigation__count-button {
+  padding: 0;
+  width: 32px;
+  color: #5866a5;
+  background-color: #eef1ff;
+  border: none;
+  border-radius: 100px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.mobile-navigation__count-button:hover {
+  cursor: pointer;
+  background-color: #dadffa;
+}
+
+.mobile-navigation__count-button_left {
+  background-image: url(../../images/Rent/plus.svg);
+}
+
+.mobile-navigation__count-button_right {
+  background-image: url(../../images/Rent/minus.svg);
+}

@@ -1,0 +1,57 @@
+{
+  "name": "bookbook_front",
+  "version": "0.1.0",
+  "private": true,
+  "lint-staged": {
+    "**/*": "npx prettier --write --ignore-unknown"
+  },
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "intl-tel-input": "^24.5.0",
+    "luxon": "^3.4.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.22.3",
+    "react-scripts": "5.0.1",
+    "react-transition-group": "^4.4.5",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "npm run start:dev:win || npm run start:dev:unix",
+    "start:dev": "cross-env-shell NODE_ENV=development \"(set PORT=3006 || export PORT=3006) && react-scripts start\"",
+    "start:dev:win": "set PORT=3006 && react-scripts start",
+    "start:dev:unix": "PORT=3006 react-scripts start",
+    "start:docker": "cross-env PORT=3006 HOST=0.0.0.0 react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "prepare": "husky"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@types/luxon": "^3.4.2",
+    "cross-env": "^7.0.3",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.7",
+    "prettier": "3.3.2"
+  }
+}

@@ -1,0 +1,106 @@
+.mobile-navigation__data-input-hours {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    width: 328px;
+    font-family: 'Open Sans';
+    margin: 0 0 8px 0;
+    padding: 0;
+
+    border: none;
+    border-radius: 12px;
+  }
+
+  .mobile-navigation__data-input-day {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 216px;
+    font-family: 'Open Sans';
+    margin: 0 8px 0 0;
+    padding: 0;
+    background-color: #EEF1FF;
+    border: none;
+    border-radius: 12px;
+  }
+
+  .mobile-navigation__data-input-hour {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 104px;
+    font-family: 'Open Sans';
+    margin: 0;
+    padding: 0;
+    background-color: #EEF1FF;
+    border: none;
+    border-radius: 12px;
+  }
+
+  .mobile-navigation__data-input-day_icon {
+    margin-right: 15px;
+    fill: #5a67d8;
+    width: 18px;
+    height: 18px;
+  }
+
+  .mobile-navigation__data-input-day:hover {
+    cursor: pointer;
+    background-color: #dadffa;
+  }
+
+  .mobile-navigation__data-input-hour:hover {
+    cursor: pointer;
+    background-color: #dadffa;
+  }
+
+  .mobile-navigation__data-input_icon {
+    padding-left: 15px;
+  }
+
+  .mobile-navigation__data-input_text {
+    font-family: 'Open Sans';
+    margin: 0;
+    padding: 16px 0 17px 17px;
+    color: rgba(7, 12, 39, .6);
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 400;
+  }
+
+  @media screen and (max-width: 1025px) {
+    .mobile-navigation__data-input-hours {
+      width: 456px;
+    }
+
+    .mobile-navigation__data-input_text {
+      padding: 16px 0 16px 15px;
+
+    }
+
+    .mobile-navigation__data-input-day {
+        width: 344px;
+      }
+
+  }
+  
+  @media screen and (max-width: 760px) {
+    .mobile-navigation__data-input-hours {
+      width: 496px;
+    }
+
+    .mobile-navigation__data-input-day {
+        width: 384px;
+      }
+  }
+  
+  @media screen and (max-width: 575px) {
+    .mobile-navigation__data-input-hours {
+      width: 288px;
+    }
+
+    .mobile-navigation__data-input-day {
+        width: 176px;
+      }
+  }
+  

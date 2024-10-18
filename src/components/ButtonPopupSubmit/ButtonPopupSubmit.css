@@ -1,0 +1,43 @@
+.mobile-navigation__submit-button {
+  font-family: "Open Sans";
+  width: 328px;
+  letter-spacing: -0.4px;
+  margin-bottom: 34px;
+  padding: 13px 16px 15px 16px;
+  color: #fff;
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 400;
+  background-color: #ff9b63;
+  border: none;
+  border-radius: 12px;
+}
+
+.mobile-navigation__submit-button:hover {
+  cursor: pointer;
+  background-color: #f78b4e;
+}
+
+.mobile-navigation__submit-button:disabled {
+  background-color: rgba(255, 155, 99, .4);
+}
+
+@media screen and (max-width: 1025px) {
+  .mobile-navigation__submit-button {
+    width: 456px;
+    margin-bottom: 40px;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .mobile-navigation__submit-button {
+    width: 496px;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .mobile-navigation__submit-button {
+    margin-bottom: 51px;
+    width: 288px;
+  }
+}

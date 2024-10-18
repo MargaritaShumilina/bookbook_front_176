@@ -1,0 +1,23 @@
+.calendar__month-name {
+  display: flex;
+  flex-direction: row;
+  padding: 20px 0 8px 0;
+}
+
+.calendar__month-name_day {
+  font-family: "Open Sans";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  color: rgba(7, 12, 39, 0.4);
+  background: #fff;
+}
+
+.calendar__month-name_day:hover {
+  cursor: pointer;
+}

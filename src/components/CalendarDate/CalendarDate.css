@@ -1,0 +1,44 @@
+.calendar__month-date {
+  display: flex;
+  flex-direction: row;
+}
+
+.calendar__month-date_number {
+  font-family: "Open Sans";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  color: #6073d5;
+  background: #fff;
+}
+
+  .calendar__month-date_number:hover {
+    cursor: pointer;
+    background-color: #dadffa;
+    border-radius: 8px;
+  }
+
+  .calendar__month-date_number-selected {
+    background-color: #dadffa;
+  }
+
+  .calendar__month-date_number-disabled {
+    color: rgba(7, 12, 39, .2);
+  }
+
+  .calendar__month-date_number:active {
+    background-color: rgba(96, 115, 213, 1);
+    color: #fff;
+  }
+
+  .calendar__month-date_today {
+    background-color: #fff;
+    border: 1px solid #6073d5;
+    border-radius: 7px;
+  }
+  
