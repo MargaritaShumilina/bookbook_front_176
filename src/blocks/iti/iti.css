@@ -11,24 +11,34 @@
 @media screen and (max-width: 1440px) {
   .iti__dropdown-content {
     width: 328px !important;
+    top: 50px !important;
+    left: 0 !important;
   }
 }
 
 @media screen and (max-width: 1024px) {
   .iti__dropdown-content {
     width: 456px !important;
+    top: 50px !important;
+    left: 0 !important;
   }
 }
 
 @media screen and (max-width: 768px) {
   .iti__dropdown-content {
     width: 496px !important;
+    position: absolute !important;
+    top: 50px !important;
+    left: 0 !important;
   }
 }
 
 @media screen and (max-width: 576px) {
   .iti__dropdown-content {
     width: 288px !important;
+    position: absolute !important;
+    top: 50px !important;
+    left: 0 !important;
   }
 }
 
@@ -82,8 +92,8 @@
   max-height: 292px !important;
   border-radius: 12px !important;
   box-sizing: border-box !important;
-  top: 50px !important;
-  left: 0 !important;
+  /*top: 50px !important;*/
+  /*left: 0 !important;*/
   :active,
   :hover,
   :focus {
@@ -141,29 +151,29 @@
 }
 
 .iti--allow-dropdown
-  .iti__country-container:not(:has(+ input[disabled])):not(
+.iti__country-container:not(:has(+ input[disabled])):not(
     :has(+ input[readonly])
   )
-  .iti__selected-country-primary:hover
-  .iti--allow-dropdown
-  .iti__country-container:not(:has(+ input[disabled])):not(
+.iti__selected-country-primary:hover
+.iti--allow-dropdown
+.iti__country-container:not(:has(+ input[disabled])):not(
     :has(+ input[readonly])
   )
-  .iti__selected-country-primary:hover {
+.iti__selected-country-primary:hover {
   background-color: initial !important;
 }
 
 .iti--allow-dropdown
-  .iti__country-container:not(:has(+ input[disabled])):not(
+.iti__country-container:not(:has(+ input[disabled])):not(
     :has(+ input[readonly])
   )
-  .iti__selected-country-primary:hover,
+.iti__selected-country-primary:hover,
 .iti--allow-dropdown
-  .iti__country-container:not(:has(+ input[disabled])):not(
+.iti__country-container:not(:has(+ input[disabled])):not(
     :has(+ input[readonly])
   )
-  .iti__selected-country:has(+ .iti__dropdown-content:hover)
-  .iti__selected-country-primary {
+.iti__selected-country:has(+ .iti__dropdown-content:hover)
+.iti__selected-country-primary {
   background-color: initial !important;
 }
 

@@ -16,7 +16,7 @@ function WayToContact() {
 
   useEffect(() => {
     const defaultChecked = BUTTONSET_WAY_TO_CONTACT.find(
-      (item) => item.checked,
+        (item) => item.checked,
     );
     if (defaultChecked) {
       setValueChange(defaultChecked.value);
@@ -33,24 +33,24 @@ function WayToContact() {
     if (emailInput) {
       setPhoneInitialized(false);
       labelTop(
-        emailInput,
-        "label-in-focus__email",
-        "email",
-        "Email address*",
-        "Email address*",
-        "delete-button__email",
+          emailInput,
+          "label-in-focus__email",
+          "email",
+          "Email address*",
+          "Email address*",
+          "delete-button__email",
       );
     }
 
     if (phoneInput && !phoneInitialized) {
       setPhoneInitialized(true);
       labelTop(
-        phoneInput,
-        "label-in-focus__phone",
-        "phoneNumber",
-        "Phone number*",
-        "Phone number*",
-        "delete-button__phone",
+          phoneInput,
+          "label-in-focus__phone",
+          "phoneNumber",
+          "Phone number*",
+          "Phone number*",
+          "delete-button__phone",
       );
     }
   }, [valueChange]);
@@ -63,6 +63,7 @@ function WayToContact() {
       };
     }
   }, [phoneInitialized, valueChange]);
+
 
   const initializeCountrySearch = () => {
     const existingWrapper = document.querySelector(".country-search-wrapper");
@@ -146,23 +147,24 @@ function WayToContact() {
         const countryItems = document.querySelectorAll(".iti__country");
         countryItems.forEach((item) => {
           const countryName = item
-            .querySelector(".iti__country-name")
-            .textContent.toLowerCase();
+              .querySelector(".iti__country-name")
+              .textContent.toLowerCase();
           item.style.display = countryName.includes(searchValue) ? "" : "none";
         });
       });
 
       const buttonFlagCountry = document.querySelector(
-        ".iti__selected-country",
+          ".iti__selected-country",
       );
       const inputNumber = document.querySelector(".iti__tel-input");
 
       document.addEventListener("click", function (event) {
+        event.preventDefault()
         const dropdown = document.querySelector(".iti__dropdown");
         if (
-          buttonFlagCountry &&
-          !buttonFlagCountry.contains(event.target) &&
-          (!dropdown || !dropdown.contains(event.target))
+            buttonFlagCountry &&
+            !buttonFlagCountry.contains(event.target) &&
+            (!dropdown || !dropdown.contains(event.target))
         ) {
           buttonFlagCountry.blur();
           buttonFlagCountry.classList.remove("iti__selected-country__focus");
@@ -179,25 +181,29 @@ function WayToContact() {
           });
         });
 
-        buttonFlagCountry.addEventListener("click", () => {
+        buttonFlagCountry.addEventListener("click", (e) => {
+          e.stopPropagation();
           const dropdown = document.querySelector(".iti__dropdown");
           if (dropdown && clonedSearchInput.value !== "") {
             clonedSearchInput.focus();
           }
         });
+
       }
 
       if (inputNumber && buttonFlagCountry) {
-        inputNumber.addEventListener("click", () => {
+        inputNumber.addEventListener("click", (e) => {
+          e.stopPropagation();
           buttonFlagCountry.classList.remove("iti__selected-country__focus");
         });
 
-        buttonFlagCountry.addEventListener("click", () => {
+        buttonFlagCountry.addEventListener("click", (e) => {
+          e.stopPropagation();
           buttonFlagCountry.classList.toggle("iti__selected-country__focus");
         });
       } else {
         console.error(
-          "Element with class .iti__tel-input or .iti__selected-country not found",
+            "Element with class .iti__tel-input or .iti__selected-country not found",
         );
       }
     } else {
@@ -226,67 +232,68 @@ function WayToContact() {
   };
 
   return (
-    <div className="way-to-contact-block">
-      <h2 className="way-to-contact-block_heading">{BUTTONSET_HEADING}</h2>
-      <div className="way-to-contact-block_buttonset">
-        {BUTTONSET_WAY_TO_CONTACT.map((item, i) => {
-          const nextValue = BUTTONSET_WAY_TO_CONTACT[i + 1]?.value;
-          return (
-            <ButtonsetItemWayToContact
-              key={item.title}
-              value={item.value}
-              valueChange={valueChange}
-              changeValue={(e) => setValueChange(e.target.value)}
-              title={item.title}
-              nextValue={nextValue}
-            />
-          );
-        })}
-      </div>
-      {valueChange !== "email" ? (
-        <div>
-          <IntlTelInput
-            required={true}
-            value={phone}
-            onChangeNumber={setPhone}
-            initOptions={{
-              initialCountry: "auto",
-              containerClass: "way-to-contact-block_inputFlag",
-              strictMode: "true",
-              nationalMode: "true",
-              separateDialCode: "true",
-              customPlaceholder: () => {
-                return "Phone number*";
-              },
-              geoIpLookup: function (success, failure) {
-                fetch("https://ipapi.co/json")
-                  .then(function (res) {
-                    return res.json();
-                  })
-                  .then(function (data) {
-                    success(data.country_code);
-                  })
-                  .catch(function () {
-                    failure();
-                  });
-              },
-              i18n: {
-                searchPlaceholder: "Country",
-              },
-            }}
-          />
+      <div className="way-to-contact-block">
+        <h2 className="way-to-contact-block_heading">{BUTTONSET_HEADING}</h2>
+        <div className="way-to-contact-block_buttonset">
+          {BUTTONSET_WAY_TO_CONTACT.map((item, i) => {
+            const nextValue = BUTTONSET_WAY_TO_CONTACT[i + 1]?.value;
+            return (
+                <ButtonsetItemWayToContact
+                    key={item.title}
+                    value={item.value}
+                    valueChange={valueChange}
+                    changeValue={(e) => setValueChange(e.target.value)}
+                    title={item.title}
+                    nextValue={nextValue}
+                />
+            );
+          })}
         </div>
-      ) : (
-        <input
-          id={"email"}
-          className={"email-input"}
-          type="email"
-          placeholder="Email address*"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-      )}
-    </div>
+        {valueChange !== "email" ? (
+            <div>
+              <IntlTelInput
+                  required={true}
+                  value={phone}
+                  onChangeNumber={setPhone}
+                  initOptions={{
+                    useFullscreenPopup: false,
+                    initialCountry: "auto",
+                    containerClass: "way-to-contact-block_inputFlag",
+                    strictMode: "true",
+                    nationalMode: "true",
+                    separateDialCode: "true",
+                    customPlaceholder: () => {
+                      return "Phone number*";
+                    },
+                    geoIpLookup: function (success, failure) {
+                      fetch("https://ipapi.co/json")
+                          .then(function (res) {
+                            return res.json();
+                          })
+                          .then(function (data) {
+                            success(data.country_code);
+                          })
+                          .catch(function () {
+                            failure();
+                          });
+                    },
+                    i18n: {
+                      searchPlaceholder: "Country",
+                    },
+                  }}
+              />
+            </div>
+        ) : (
+            <input
+                id={"email"}
+                className={"email-input"}
+                type="email"
+                placeholder="Email address*"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+            />
+        )}
+      </div>
   );
 }
 
