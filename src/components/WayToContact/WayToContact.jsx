@@ -16,7 +16,7 @@ function WayToContact() {
 
   useEffect(() => {
     const defaultChecked = BUTTONSET_WAY_TO_CONTACT.find(
-        (item) => item.checked,
+        (item) => item.checked
     );
     if (defaultChecked) {
       setValueChange(defaultChecked.value);
@@ -38,11 +38,11 @@ function WayToContact() {
           "email",
           "Email address*",
           "Email address*",
-          "delete-button__email",
+          "delete-button__email"
       );
     }
 
-    if (phoneInput && !phoneInitialized) {
+    if (phoneInput) {
       setPhoneInitialized(true);
       labelTop(
           phoneInput,
@@ -50,7 +50,7 @@ function WayToContact() {
           "phoneNumber",
           "Phone number*",
           "Phone number*",
-          "delete-button__phone",
+          "delete-button__phone"
       );
     }
   }, [valueChange]);
@@ -63,7 +63,6 @@ function WayToContact() {
       };
     }
   }, [phoneInitialized, valueChange]);
-
 
   const initializeCountrySearch = () => {
     const existingWrapper = document.querySelector(".country-search-wrapper");
@@ -154,12 +153,11 @@ function WayToContact() {
       });
 
       const buttonFlagCountry = document.querySelector(
-          ".iti__selected-country",
+          ".iti__selected-country"
       );
       const inputNumber = document.querySelector(".iti__tel-input");
 
       document.addEventListener("click", function (event) {
-        event.preventDefault()
         const dropdown = document.querySelector(".iti__dropdown");
         if (
             buttonFlagCountry &&
@@ -181,29 +179,25 @@ function WayToContact() {
           });
         });
 
-        buttonFlagCountry.addEventListener("click", (e) => {
-          e.stopPropagation();
+        buttonFlagCountry.addEventListener("click", () => {
           const dropdown = document.querySelector(".iti__dropdown");
           if (dropdown && clonedSearchInput.value !== "") {
             clonedSearchInput.focus();
           }
         });
-
       }
 
       if (inputNumber && buttonFlagCountry) {
-        inputNumber.addEventListener("click", (e) => {
-          e.stopPropagation();
+        inputNumber.addEventListener("click", () => {
           buttonFlagCountry.classList.remove("iti__selected-country__focus");
         });
 
-        buttonFlagCountry.addEventListener("click", (e) => {
-          e.stopPropagation();
+        buttonFlagCountry.addEventListener("click", () => {
           buttonFlagCountry.classList.toggle("iti__selected-country__focus");
         });
       } else {
         console.error(
-            "Element with class .iti__tel-input or .iti__selected-country not found",
+            "Element with class .iti__tel-input or .iti__selected-country not found"
         );
       }
     } else {
